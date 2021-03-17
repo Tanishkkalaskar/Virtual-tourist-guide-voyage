@@ -35,7 +35,7 @@ class _SignInState extends State<SignIn> {
     final User currentUser = await _auth.currentUser;
     assert(user.uid == currentUser.uid);
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-        return HomeScreen();
+        return Home();
       }));
     return 'signInWithGoogle succeeded: $user';
   }
@@ -46,7 +46,7 @@ class _SignInState extends State<SignIn> {
         .signInWithEmailAndPassword(email: em, password: pw)
         .then((authResult) {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-        return HomeScreen();
+        return Home();
       }));
     }).catchError((err) {});
   }

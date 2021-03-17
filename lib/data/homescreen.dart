@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:voyage/data/map.dart';
 
-class HomeScreen extends StatelessWidget {
+class Home extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> signOut(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
     Navigator.of(context).pushNamed('/Homesign');
   }
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +30,13 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {},
+              icon: Icon(Icons.map),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Map()),
+                );
+              },
             ),
           ],
         ),

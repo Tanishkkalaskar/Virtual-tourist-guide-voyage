@@ -31,7 +31,7 @@ class HomeSignin extends StatelessWidget {
     final User currentUser = await _auth.currentUser;
     assert(user.uid == currentUser.uid);
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-        return HomeScreen();
+        return Home();
       }));
     return 'signInWithGoogle succeeded: $user';
   }

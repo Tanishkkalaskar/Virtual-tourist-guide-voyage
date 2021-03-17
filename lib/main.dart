@@ -5,6 +5,7 @@ import './data/Welcome.dart';
 import './data/homescreen.dart';
 import './data/home_signin.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           ? "/WelcomePage"
           : "/HomePage",
       routes: {
-        "/HomePage": (context) => HomeScreen(),
+        "/HomePage": (context) => Home(),
         "/HomeSign": (context) => HomeSignin(),
         "/WelcomePage": (context) => WelcomePage(),
 

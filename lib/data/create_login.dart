@@ -22,7 +22,7 @@ class _CreateLoginState extends State<CreateLogin> {
             email: email.trim(), password: pwd.trim())
         .then((authResult) {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-        return HomeScreen();
+        return Home();
       }));
     }).catchError((err) {
       print(err.code);
