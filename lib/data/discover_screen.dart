@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
+import 'body_discover.dart';
 
-class DisocverInd extends StatelessWidget {
-  const DisocverInd({Key key}) : super(key: key);
+class discoverScreen extends StatelessWidget {
+  const discoverScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text("voyage"),
-          leading: GestureDetector(
-            onTap: () {/* Write listener code here */},
-            child: Icon(
-              Icons.menu, // add custom icons also
-            ),
+      appBar: buildAppbar(),
+      body: Body(),
+    );
+  }
+
+  AppBar buildAppbar() {
+    return AppBar(
+      title: Text("voyage"),
+      actions: [
+        IconButton(
+          icon: Icon(
+            Icons.camera_alt,
+            color: Colors.white,
           ),
-          actions: [
-            IconButton(
-              icon: Icon(
-                Icons.camera_alt,
-                color: Colors.white,
-              ),
-              onPressed: () {},
-            ),
-          ],
+          onPressed: () {},
         ),
+        IconButton(
+          icon: Icon(
+            Icons.image,
+            color: Colors.white,
+          ),
+        ),
+      ],
     );
   }
 }

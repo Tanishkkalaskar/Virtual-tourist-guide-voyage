@@ -16,9 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: FirebaseAuth.instance.currentUser == null
-          ? "/WelcomePage"
-          : "/HomePage",
+      initialRoute:"/HomePage",
       routes: {
         "/HomePage": (context) => Home(),
         "/HomeSign": (context) => HomeSignin(),
@@ -30,3 +28,4 @@ class MyApp extends StatelessWidget {
   }
   // This widget is the root of your application.
 }
+//FirebaseAuth.instance.currentUser == null? "/WelcomePage": "/HomePage",

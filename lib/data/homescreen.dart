@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:voyage/data/map.dart';
+import 'discover_screen.dart';
 
 class Home extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -51,7 +52,12 @@ class Home extends StatelessWidget {
             ),
             Center(
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => discoverScreen()),
+                  );
+                },
                 textColor: Colors.white,
                 padding: const EdgeInsets.all(0.0),
                 child: Container(
