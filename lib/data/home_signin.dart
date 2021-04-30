@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import './homescreen.dart';
 
 class HomeSignin extends StatelessWidget {
@@ -29,7 +30,12 @@ class HomeSignin extends StatelessWidget {
     assert(await user.getIdToken() != null);
 
     final User currentUser = await _auth.currentUser;
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.uid)
+        .set({"role": "admin"});
     assert(user.uid == currentUser.uid);
+    
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
         return Home();
       }));

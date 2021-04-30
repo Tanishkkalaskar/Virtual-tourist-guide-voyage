@@ -12,6 +12,7 @@ class Map extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => ApplicationBloc(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         home: HomeScreen(),
       ),

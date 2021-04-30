@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import './homescreen.dart';
 
 class SignIn extends StatefulWidget {
@@ -33,6 +34,12 @@ class _SignInState extends State<SignIn> {
     assert(await user.getIdToken() != null);
 
     final User currentUser = await _auth.currentUser;
+    String uid1 = currentUser.uid;
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.uid)
+        .set({"role": "admin",
+        "uid":uid1});
     assert(user.uid == currentUser.uid);
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
         return Home();
@@ -41,14 +48,22 @@ class _SignInState extends State<SignIn> {
   }
 
   String email, password;
-  void _signIn({String em, String pw}) {
-    _auth
-        .signInWithEmailAndPassword(email: em, password: pw)
-        .then((authResult) {
+  void _signIn({String em, String pw}) async {
+    try {
+      final UserCredential result =
+          await _auth.signInWithEmailAndPassword(email: em, password: pw);
+      final User user = result.user;
+      String uid2 = user.uid;
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .set({"role":"admin","uid":uid2});
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
         return Home();
       }));
-    }).catchError((err) {});
+    } catch (e) {
+      print(e.message);
+    }
   }
 
   
