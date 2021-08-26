@@ -1,21 +1,12 @@
+Title - Voyage Virtual Tourist Guide.
+Description - A cross-platform mobile application built in Flutter in which an image of any monument is taken as input and the information of that monument will be displayed to the user.It uses a Machine learning algorithm known as K-nearestneighbor.
 
-# voyage
+Here is a screenshot of the Signup/Login Page.
+![image](https://user-images.githubusercontent.com/59599305/130967731-fed239b6-3216-460b-85c9-ee52cddcbd58.png)
 
-A new Flutter project.
+ScreenShot of Homepage.
+![image](https://user-images.githubusercontent.com/59599305/130969392-27aae869-dc11-43c4-a29a-bf95d16c8053.png)
 
-## Getting Started
+Screenshot of how the information of the monument will be displayed, and there corresponding reviews!
+![image](https://user-images.githubusercontent.com/59599305/130970038-f89c1aae-8909-4356-8462-081e18bb03cc.png)
 
-This project is a starting point for a Flutter application.
-
-
-The final version of project is now created and pushed to Github.
-
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
