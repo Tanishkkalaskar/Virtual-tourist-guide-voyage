@@ -7,7 +7,7 @@ Here is a screenshot of the Signup/Login Page.
 ![image](https://user-images.githubusercontent.com/59599305/130967731-fed239b6-3216-460b-85c9-ee52cddcbd58.png)
 
 
-ScreenShot of Homepage.
+Screenshot of Homepage.
 
 ![image](https://user-images.githubusercontent.com/59599305/130969392-27aae869-dc11-43c4-a29a-bf95d16c8053.png)
 
